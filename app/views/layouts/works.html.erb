@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	 <title>Works: <%= controller.action_name %></title>
+	 <%= stylesheet_link_tag 'matan_design' %>
+	 <%= javascript_include_tag :defaults %>
+
+     <%= javascript_include_tag "shadowbox-prototype"%>
+	 <%= javascript_include_tag "shadowbox"%>
+	 <%= javascript_include_tag "shadowboxInit"%>
+  </head>
+  <body>
+	 <div id="container">
+	 <div id="content">
+		 <p style="color: green"><%= flash[:notice] %></p>
+
+		<%= @content_for_layout%>
+
+	 </div>
+
+	<div id="footer">
+		<hr>
+		  <%=link_to "CV", "/Matan_Israeli_CV_english.doc" %>
+		  <%=link_to "Text", "/exhibition_text.doc" %>
+		  <%= mail_to "unateazy@yahoo.com", "Contact"%>
+		  
+		  <%= link_to "login", {:action => "admin"}, :style=>"float:right; font-size: 12px;" %>
+	</div>
+
+</div>
+  </body>
+</html>

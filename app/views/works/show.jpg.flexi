@@ -1,0 +1,3 @@
+@work.operate do |image|
+  image.resize '3000x440'
+end

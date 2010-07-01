@@ -1,0 +1,185 @@
+
+html{
+    height: 100%;
+}
+
+#description{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+
+body {
+    background-color: black;
+    color: white;
+    height: 100%;
+}
+
+#others {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: small;
+    border: 1px solid #bbbbbb;
+}
+
+#others td {
+    text-align: left;
+}
+
+#others thead td {
+    font-weight: bold;
+    vertical-align: top;
+}
+
+
+
+div.login {
+    
+    text-align: left;
+    background-position: left bottom;
+    vertical-align: bottom;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+div.form {
+    
+    text-align: center;
+}
+
+div.headline {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    font-variant: normal;
+    height: 25px;;
+    text-align: center;
+}
+
+
+#container {
+    position: relative;
+    min-height: 100%;
+    text-align: center;
+	}
+
+
+div.related {
+    
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.image {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 900px;
+    margin:auto;
+}
+
+#content {
+    padding: 0px;
+    height: 655px;
+    margin: auto;
+    text-align: center;
+    overflow:auto;
+}
+
+#footer {
+    bottom: 0;
+    margin: auto;
+    width: 800px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-align:left;
+}
+
+h1 {  
+    text-align: center;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: white; }
+a:visited { color: #666; }
+
+
+div.errors {
+    
+    text-align: center;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+  color: black;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+

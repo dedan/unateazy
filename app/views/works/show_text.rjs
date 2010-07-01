@@ -1,0 +1,4 @@
+
+page.replace_html 'description', @work.description
+
+page.visual_effect :appear, 'description', :duration => 0.5

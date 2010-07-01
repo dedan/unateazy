@@ -1,0 +1,40 @@
+
+validations
+	 *was wenn kein file angegeben?
+	 -> das bekomme ich gerade einfach nicht gefixt, später noch mal schauen
+
+work model:
+
+	 ich zeige also einfach das bild an, das thumbnail generiere ich dynamisch
+	 und wenn ich in content was anderes (gültiges html) finde, dann pack ich
+	 das in die hauptansicht
+
+admin controller:
+	 *nach login kommt man auf die hauptseite des admin controllers,
+	 * dort werden alle arbeiten gelistet
+	 * jede arbeit kann bearbeitet oder gelöscht werden
+	 * zum bearbeiten wird oben das bild angezeigt und der text usw kann bearbeitet werden
+	 * ausserdem angezeigt werden thumbnails zu allen anderen arbeiten, mit checkboxen
+
+
+generell:
+	 *beschreibungen mit ajax einblenden
+
+neue arbeiten erstellen
+	 *screenshot für videos
+	 *checken ob es ein video ist
+	 *eintrag erstellen, danach weiterleiten zu verbindungen hinzufügen, bearbeiten
+
+
+verbindungen
+	 *beim erstellen eines neuen eintrages soll man gleich verbindungen erstellen können
+	 *verbindungen sollen editiert werden können
+	 *extra edict relations action ?
+
+graph
+	 *schauen wie ich den graph am besten mit graphviz designe
+	 *pfad in graph
+
+cookie:
+	 *bewegungen des users protokolieren
+
