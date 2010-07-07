@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20090219152702) do
   end
 
   create_table "works_rel_works", :id => false, :force => true do |t|
-    t.integer "work_id",     :null => false
-    t.integer "rel_work_id", :null => false
+    t.integer "work_id",     :default => 0, :null => false
+    t.integer "rel_work_id", :default => 0, :null => false
   end
 
 end
