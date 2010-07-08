@@ -13,6 +13,12 @@ class WorksController < ApplicationController
 
   #show the index page linking to a random work
   def index
+    @works = Work.find(:all)
+    
+    respond_to do |format|
+      format.html
+      format.atom
+    end
   end
 
   # render a table containing all works

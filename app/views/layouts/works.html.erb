@@ -7,10 +7,10 @@
 	 <title>Works: <%= controller.action_name %></title>
 	 <%= stylesheet_link_tag 'matan_design' %>
 	 <%= javascript_include_tag :defaults %>
-
      <%= javascript_include_tag "shadowbox-prototype"%>
 	 <%= javascript_include_tag "shadowbox"%>
 	 <%= javascript_include_tag "shadowboxInit"%>
+	 <%= auto_discovery_link_tag :atom, formatted_works_path(:atom) %>
   </head>
   <body>
 	 <div id="container">
