@@ -12,13 +12,12 @@ class WorksController < ApplicationController
   end
 
   #show the index page 
-  # TODO with a random work
   def index
-   
+    @rand_work = Work.find(:all).sort_by { rand }.first
   end
 
   def admin
-   @works = Work.find(:all)
+    @works = Work.find(:all)
   end
 
   def thumb
