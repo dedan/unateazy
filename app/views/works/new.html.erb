@@ -1,45 +1,38 @@
-<h1>New work</h1>
-
-<br /> <br />
-
-  <%= error_messages_for :work %>
-
-
-<% form_for(@work, :html=> {:multipart=>true}) do |form| %>
-
-  <div class="form">
-	 <p>
-		<b>Headline</b><br />
-		<%= form.text_field :headline %>
-	 </p>
-
-	 <p>
-		<b>Description</b><br />
-		<%= form.text_area :description %>
-	 </p>
-
-	 <p>
-		<b>Image file</b><br />
-		<%= form.file_field :image %>
-	 </p>
-
-	 <p>
-	 <b>Thumbnail file</b><br />
-	 <%= form.file_field :thumbnail %>
-	 </p>
-	 
-	 <p>
-		<b>alternative Content (Video, etc)</b> <br />
-		<%= form.text_area :other_content %>
-	 </p>
-
-	 <p>
-		<%= form.submit "Create" %>
-	 </p>
-  </div>
-
-<% end %>
-
-
-
-<%= link_to 'Back', works_path %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>
+            New work
+        </h1>
+        <p>
+            <br>
+            <br>
+            <%= error_messages_for :work %> 
+            <% form_for(@work, :html=> {:multipart=>true}) do |form| %>
+        </p>
+        <div class="form">
+            <p>
+                <b>Headline</b><br>
+                <%= form.text_field :headline %>
+            </p>
+            <p>
+                <b>Description</b><br>
+                <%= form.text_area :description %>
+            </p>
+            <p>
+                <b>Image file</b><br>
+                <%= form.file_field :image %>
+            </p>
+            <p>
+                <b>alternative Content (Video, etc)</b><br>
+                <%= form.text_area :other_content %>
+            </p>
+            <p>
+                <%= form.submit "Create" %>
+            </p>
+        </div><% end %><%= link_to 'Back', works_path %>
+    </body>
+</html>
