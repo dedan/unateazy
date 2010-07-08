@@ -1,37 +1,37 @@
-<div class="headline">
-  <%=  h @work.headline unless @work.nil? %>
-</div>
-
-<% unless @work.nil? %>
-<% if @work.other_content == "" %>
-	<%dimensions = ImageSpec::Dimensions.new(@work.image.path(:display))
-         shadowbox_needed = dimensions.width > 600 || dimensions.height > 600
-	if  shadowbox_needed %>
-		<%=link_to(image_tag(@work.image.url(:display)), @work.image.url(:original), :rel=>"shadowbox;options={animate: true}")%>
-	<%else%>
-		<%=image_tag(@work.image.url(:display))%>
-	<% end %>
-	<%dimensions.width.to_s + "," + dimensions.height.to_s %>
-<% else %>
-	 <%= @work.other_content %>
-	 <% end %>
-
-<div id="description">
-  <%if shadowbox_needed%>
-    (Click the image for a larger view)
-  <%end%><br/>
-  <%= link_to_remote("Details", :url =>{ :action => :show_text, :id => @work.id}) %>
-  
-</div>
-<% end %>
-
-
-<div class="related">
-<% unless @work.nil? %>
-	 <% for rel_work in @rel_works  %>
-		<%= link_to(image_tag(rel_work.thumbnail.url), work_path(rel_work), :title=>rel_work.headline )   %>
-	 <% end %>
-	 <%= link_to image_tag("new_route.jpg"), "/work/show", :style=>"margin-left: 40px;" %>
-<% end %>
-</div>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div class="headline">
+            <%=  h @work.headline unless @work.nil? %>
+        </div>
+        <% unless @work.nil? %>
+            <% if @work.other_content == "" %>
+                <% if @shadowbox_needed %>
+                    <%=link_to(image_tag(@work.image.url(:display)), @work.image.url(:original), :rel=>"shadowbox;options={animate: true}")%>
+                <%else%>
+                    <%=image_tag(@work.image.url(:display))%>
+                <% end %>
+            <% else %>
+                <%= @work.other_content %>
+            <% end %>
+            <div id="description">
+                <%if @shadowbox_needed%>
+                    (Click the image for a larger view) 
+                <%end%>
+                <br>
+                <%= link_to_remote("Details", :url =>{ :action => :show_text, :id => @work.id}) %>
+            </div>
+        <% end %>
+        <div class="related">
+            <% unless @work.nil? %>
+                <% for rel_work in @rel_works  %>
+                    <%= link_to(image_tag(rel_work.thumbnail.url), work_path(rel_work), :title=>rel_work.headline )   %>
+                <% end %>
+                <%= link_to image_tag("new_route.jpg"), "/work/show", :style=>"margin-left: 40px;" %>
+            <% end %>
+        </div>
+    </body>
+</html>
