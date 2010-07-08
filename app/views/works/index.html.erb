@@ -1,1 +1,11 @@
-<%=link_to image_tag("welcome.jpg"), url_for(:controller=>"works",:action=>"show",:id=>29)%>
+
+<% unless @rand_work.nil? %>
+
+	<%= link_to(image_tag("welcome.jpg"), work_path(@rand_work), :title=>@rand_work.headline )%>
+	
+<% else %>
+	
+	no works available yet
+	
+<% end %>
+
