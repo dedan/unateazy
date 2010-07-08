@@ -7,7 +7,9 @@
         <div class="headline">
             <%=  h @work.headline unless @work.nil? %>
         </div>
-        <% unless @work.nil? %>
+        <% if @work.nil? %>
+            no works available yet :-(
+        <% else%>
             <% if @work.other_content == "" %>
                 <% if @shadowbox_needed %>
                     <%=link_to(image_tag(@work.image.url(:display)), @work.image.url(:original), :rel=>"shadowbox;options={animate: true}")%>
@@ -24,14 +26,12 @@
                 <br>
                 <%= link_to_remote("Details", :url =>{ :action => :show_text, :id => @work.id}) %>
             </div>
-        <% end %>
-        <div class="related">
-            <% unless @work.nil? %>
+            <div class="related">
                 <% for rel_work in @rel_works  %>
                     <%= link_to(image_tag(rel_work.thumbnail.url), work_path(rel_work), :title=>rel_work.headline )   %>
                 <% end %>
                 <%= link_to image_tag("new_route.jpg"), "/work/show", :style=>"margin-left: 40px;" %>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </body>
 </html>

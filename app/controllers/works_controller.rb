@@ -6,29 +6,29 @@ class WorksController < ApplicationController
   N_RELATED = 5
   
   
-  # GET /works GET /works.xml
+  # show the description of a work using javascript
   def show_text
     @work = Work.find(params[:id])
   end
 
-  #show the index page 
+  #show the index page linking to a random work
   def index
-    @rand_work = Work.find(:all).sort_by { rand }.first
   end
 
+  # render a table containing all works
   def admin
     @works = Work.find(:all)
   end
 
-  def thumb
-   @work = Work.find(params[:id])
-   render :inline => "@work.operate {|p| p.resize '100x100'}", :type => :flexi
-  end
-
-  def mid_thumb
-   @work = Work.find(params[:id])
-   render :inline => "@work.operate {|p| p.resize '120x120'}", :type => :flexi
-  end
+  # def thumb
+  #  @work = Work.find(params[:id])
+  #  render :inline => "@work.operate {|p| p.resize '100x100'}", :type => :flexi
+  # end
+  # 
+  # def mid_thumb
+  #  @work = Work.find(params[:id])
+  #  render :inline => "@work.operate {|p| p.resize '120x120'}", :type => :flexi
+  # end
 
 
   # GET /works/1 GET /works/1.xml
