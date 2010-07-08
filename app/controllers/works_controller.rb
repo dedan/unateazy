@@ -28,11 +28,13 @@ class WorksController < ApplicationController
     else
       @work = Work.find(params[:id])
     end
-    
-    # determine whether the shadowbox plugin is needed (large image)
-    dimensions        = ImageSpec::Dimensions.new(@work.image.path(:display).downcase)
-    @shadowbox_needed = dimensions.width > 600 || dimensions.height > 600
-    @rel_works        = @work.rel_works.first(N_RELATED) unless @work.nil?
+
+    unless @work.nil?
+      # determine whether the shadowbox plugin is needed (large image)
+      dimensions        = ImageSpec::Dimensions.new(@work.image.path(:display).downcase)
+      @shadowbox_needed = dimensions.width > 600 || dimensions.height > 600
+      @rel_works        = @work.rel_works.first(N_RELATED) unless @work.nil?
+    end
 
     respond_to do |format|
       format.html
