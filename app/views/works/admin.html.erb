@@ -9,7 +9,7 @@
 <% for work in @works %>
   <tr>
     <td><%= limit_to(30, work.headline) %></td>
-	 <td><%= image_tag "/works/thumb/#{work.id}" %></td>
+	 <td><%= image_tag work.image.url(:thumb) %></td>
     <td><%= link_to 'Show', work %></td>
     <td><%= link_to 'Edit', edit_work_path(work) %></td>
     <td><%= link_to 'Destroy', work, :confirm => 'Are you sure?', :method => :delete %></td>
