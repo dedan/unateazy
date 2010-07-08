@@ -1,57 +1,64 @@
-<h1>Editing work</h1>
-
-<%= error_messages_for :work %>
-
-<% form_for @work, :html=> {:multipart=>true} do |f| %>
-  <p>
-	 <b>Headline</b><br />
-	 <%= f.text_field :headline %>
-  </p>
-
-  <p>
-	 <b>Description</b><br />
-	 <%= f.text_area :description %>
-  </p>
-
-	<p>
-	<b>Image file</b><br />
-	<%= f.file_field :image %>
-		 </p>
-
-		 <p>
-		 <b>Thumbnail file</b><br />
-		 <%= f.file_field :thumbnail %>
-	</p>
-  <p>
-	 <b>Object</b><br />
-	 <%= f.text_area :other_content %>
-  </p>
-
-  <table id="others">
-	 <thead>
-		<tr>
-		  <td>Name</td>
-		  <td>Image</td>
-		  <td>related ?</td>
-		</tr>
-	 </thead>
-	 <tbody>
-		  <% for other in @others do %>
-		  <tr>
-			 <td><%= limit_to(30, other.headline) %></td>
-			 <td><%= image_tag "/works/thumb/#{other.id}" %></td>
-			 <% checked = other.related_to(@work) %>
-			 <td><%= check_box 'checkbox', other.id, :checked => checked %></td>
-		  </tr>
-		  <%  end %>
-	 </tbody>
-  </table>
-
-
-	 <p>
-		<%= f.submit "Update" %>
-	 </p>
-  <% end %>
-
-  <%= link_to 'Show', @work %> |
-  <%= link_to 'Back', "/login" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title><%= "Edit: #{@work.headline}"%></title>
+    </head>
+    <body>
+        <h1>
+            Editing work
+        </h1>
+        <%= error_messages_for :work %>
+        <% form_for @work, :html=> {:multipart=>true} do |f| %>
+        <p>
+            <b>Headline</b><br>
+            <%= f.text_field :headline %>
+        </p>
+        <p>
+            <b>Description</b><br>
+            <%= f.text_area :description %>
+        </p>
+        <p>
+            <b>Image file</b><br>
+            <%= f.file_field :image %>
+        </p>
+        <p>
+            <b>Object</b><br>
+            <%= f.text_area :other_content %>
+        </p>
+        <table id="others">
+            <thead>
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Image
+                    </td>
+                    <td>
+                        related ?
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <% for other in @others do %>
+                <tr>
+                    <td>
+                        <%= limit_to(30, other.headline) %>
+                    </td>
+                    <td>
+                        <%= image_tag other.image.url(:thumb) %>
+                    </td><% checked = other.related_to(@work) %>
+                    <td>
+                        <%= check_box 'checkbox', other.id, :checked => checked %>
+                    </td>
+                </tr><%  end %>
+            </tbody>
+        </table>
+        <p>
+            <%= f.submit "Update" %>
+        </p><% end %><%= link_to 'Show', @work %>
+        <p>
+            | <%= link_to 'Back', "/login" %>
+        </p>
+    </body>
+</html>
