@@ -28,7 +28,7 @@
             </div>
             <div class="related">
                 <% for rel_work in @rel_works  %>
-                    <%= link_to(image_tag(rel_work.thumbnail.url), work_path(rel_work), :title=>rel_work.headline )   %>
+                    <%= link_to(image_tag(rel_work.image.url(:thumb)), work_path(rel_work), :title=>rel_work.headline )   %>
                 <% end %>
                 <%= link_to image_tag("new_route.jpg"), "/work/show", :style=>"margin-left: 40px;" %>
             </div>
