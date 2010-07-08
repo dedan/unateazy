@@ -33,15 +33,18 @@ class WorksController < ApplicationController
 
   # GET /works/1 GET /works/1.xml
   def show
-   if params[:id].nil?
-    @work = Work.find(:all).sort_by { rand }.first
-   else
-    @work = Work.find(params[:id])
-   end
-   @rel_works = @work.rel_works.first(N_RELATED) unless @work.nil?
+    if params[:id].nil?
+      @work = Work.find(:all).sort_by { rand }.first
+    else
+      @work = Work.find(params[:id])
+    end
+    
+    dimensions        = ImageSpec::Dimensions.new(@work.image.path(:display).downcase)
+    @shadowbox_needed = dimensions.width > 600 || dimensions.height > 600
+    @rel_works        = @work.rel_works.first(N_RELATED) unless @work.nil?
 
     respond_to do |format|
-    format.jpg if params[:format] == 'jpg'  
+      format.jpg if params[:format] == 'jpg'  
       format.html # index.html.erb
     end
   end
