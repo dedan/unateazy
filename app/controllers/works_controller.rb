@@ -4,6 +4,18 @@ class WorksController < ApplicationController
 
   # how many related works are shown below the current work
   N_RELATED = 5
+
+  # show the cv (fix html)
+  def cv
+  end
+  
+  # show press (fix html)
+  def press
+  end
+
+  # show text (fix html)
+  def text
+  end
   
   
   # show the description of a work using javascript

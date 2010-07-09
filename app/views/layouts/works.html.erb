@@ -23,10 +23,11 @@
 
 	<div id="footer">
 		<hr>
-		  <%=link_to "CV", "/Matan_Israeli_CV_english.doc" %>
-		  <%=link_to "Text", "/exhibition_text.doc" %>
+		  <%=link_to "CV", {:action => "cv"} %>
+		  <%=link_to "Text", {:action => "text"} %>
+		  <%=link_to "Press", {:action => "press"} %>
 		  <%= mail_to "unateazy@yahoo.com", "Contact"%>
-		  
+		  <%=link_to "Works", {:action => "show"} %>
 		  <%= link_to "login", {:action => "admin"}, :style=>"float:right; font-size: 12px;" %>
 	</div>
 

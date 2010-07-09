@@ -3,6 +3,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/work/show', :controller => 'works', :action => 'show'
   map.connect '', :controller => 'works', :action => 'index'
   map.login  '/login', :controller => 'works', :action => 'admin'
+  map.connect '/cv', :controller => 'works', :action => 'cv'
+  map.connect '/press', :controller => 'works', :action => 'press'
+  map.connect '/text', :controller => 'works', :action => 'text'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
